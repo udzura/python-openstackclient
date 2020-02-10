@@ -55,6 +55,8 @@ def make_client(instance):
         endpoint,
         token=instance.auth.get_token(instance.session),
         cacert=instance.cacert,
+        cert_file=instance.session.cert[0],
+        key_file=instance.session.cert[1],
         insecure=not instance.verify,
     )
 
